@@ -1,5 +1,7 @@
 import 'package:doctor_app/constants/constant.dart';
+import 'package:doctor_app/screens/widgets/doctor_app_grid_menu.dart';
 import 'package:doctor_app/screens/widgets/home_screen_navbar.dart';
+import 'package:doctor_app/screens/widgets/top_doctor_list.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -63,7 +65,32 @@ class HomeScreen extends StatelessWidget {
                         ),
                         border: InputBorder.none),
                   ),
-                )
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                const DoctorAppGridMenu(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Top Doctors',
+                      style: Theme.of(context).textTheme.headline3,
+                    ),
+                    Text(
+                      'View all',
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1!
+                          .copyWith(color: kBlueColor),
+                    )
+                  ],
+                ),
+
+                const SizedBox(
+                  height: 24,
+                ),
+                const TopDoctorList()
               ],
             ),
           ),
